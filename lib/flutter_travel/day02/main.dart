@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main(){
+  testDart();
   runApp(MyApp());
 }
 
@@ -30,7 +31,7 @@ class _MyHomePageState extends State<MyHomePage> {
   String _info = "parse";
 
   void _incrementCounter() {
-    var num="a";
+    var num="12";
     setState(() {
       var str2num = str2Num(num);
       if( str2num!=null){
@@ -79,4 +80,48 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
 }
+
+void testDart(){
+  var a = 20;
+  var b;
+  var c = b ?? a++;
+  print("类似三元运算符 ?? 返回值==>>a=$a,c=$c"); //返回null；
+
+  //类似三元运算符
+  var e = 20;
+  var f = 5;
+  var g = f ?? e++;
+  print("类似三元运算符 ?? 返回值==>>$e=$e,g=$g"); //返回null；
+
+  //对象为null
+  String str;
+  //print(str.isEmpty);这个会奔溃的
+
+  var str2 = "555";
+  str2 = str;
+  print("对象使用?.语法返回值==>>${str2?.length}"); //返回null；
+
+  //1、对象属性的传统赋值方式；
+  var paint = Paint();
+  paint.strokeCap = StrokeCap.round;
+  paint.style = PaintingStyle.stroke;
+  paint.color = Color(0xffBBC3C5);
+  paint.isAntiAlias = true;
+
+  //2、对象属性的 级联操作符
+  var paintA = Paint()
+    ..strokeCap = StrokeCap.round
+    ..style = PaintingStyle.stroke
+    ..color = Color(0xffBBC3C5)
+    ..isAntiAlias = true;
+  print("属性值paintA==>>$paintA");
+
+  //3、使用3个点...对数据进行结构
+  var land = <String>["Java","Kotlin"];
+  print("原始数据==>>$land");
+  land = ["Dart","Python",...land];
+  print("解构后的的数据==>>${land.toString()}");
+}
+
+
 
