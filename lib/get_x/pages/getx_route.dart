@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_getx_learn/get_x/pages/html_demo_page.dart';
 import 'package:flutter_getx_learn/get_x/controller/sum_controller.dart';
 import 'package:flutter_getx_learn/get_x/controller/update_controller.dart';
 import 'package:flutter_getx_learn/get_x/model/user_data.dart';
@@ -133,6 +134,11 @@ class OtherPage extends StatelessWidget {
             ElevatedButton(
                 onPressed: () => Get.to(NewPage()),
                 child: Text('GetX中 依赖注入的使用')
+            ),
+
+            ElevatedButton(
+                onPressed: () => Get.to(HtmlPage()),
+                child: Text('测试Flutter html')
             ),
           ],
         ),
