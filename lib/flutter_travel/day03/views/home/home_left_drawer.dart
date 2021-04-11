@@ -7,6 +7,11 @@ class HomeLeftDrawer extends StatelessWidget {
       elevation: 5,
       child: Container(
         color: Colors.blue.withAlpha(55),
+        child: Center(
+          child: (
+            Text("这是一个为实现Drawer")
+          ),
+        ),
       ),
     );
   }

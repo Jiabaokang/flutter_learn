@@ -20,7 +20,7 @@ class _NavPageState extends State<NavPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar:_position==0? null:AppBar(
         title: Text("Scaffold Demo"),
         centerTitle: true,
 
