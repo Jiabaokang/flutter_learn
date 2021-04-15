@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_getx_learn/flutter_travel/day03/app/cons.dart';
+import 'package:flutter_getx_learn/flutter_travel/day03/views/dialogs/dialog_about.dart';
 
 class HomeMenu extends StatelessWidget {
   @override
@@ -25,11 +26,7 @@ class HomeMenu extends StatelessWidget {
       case 0:
         showDialog(
             context: context,
-            builder: (context) => Center(
-              child: Container(
-                    child: Text("这是一个未实现的dialog"),
-                  ),
-            ));
+            builder: (context) => DialogAbout());
         break;
     }
   }
