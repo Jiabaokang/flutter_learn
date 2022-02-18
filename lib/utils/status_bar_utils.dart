@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class StatusBarUtils {
+
   ///设置状态栏沉侵式
   static void setStatusBarLight() {
     SystemUiOverlayStyle uiOverlayStyle = SystemUiOverlayStyle(

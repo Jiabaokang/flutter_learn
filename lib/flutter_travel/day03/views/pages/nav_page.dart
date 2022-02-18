@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_getx_learn/flutter_travel/day03/app/cons.dart';
-import 'package:flutter_getx_learn/flutter_travel/day03/views/home/home_left_drawer.dart';
+import '../../app/cons.dart';
+import '../home/home_left_drawer.dart';
 import 'act_page.dart';
 import 'home_page.dart';
 import 'love_page.dart';

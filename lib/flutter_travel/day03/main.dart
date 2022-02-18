@@ -1,9 +1,8 @@
 
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_getx_learn/utils/status_bar_utils.dart';
 
+import '../../utils/status_bar_utils.dart';
 import 'views/pages/nav_page.dart';
 
 void main(){

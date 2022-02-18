@@ -6,7 +6,7 @@ class GridPage extends StatelessWidget{
     return Scaffold(
       appBar: AppBar(title: Text("绘制网格"),),
       body: CustomPaint(
-        painter: GridLinePainter(Size(50,50)),
+        painter: GridLinePainter(const Size(50,50)),
       ),
     );
   }
@@ -15,7 +15,7 @@ class GridPage extends StatelessWidget{
 
 ///画网格线
 class GridLinePainter extends CustomPainter {
-  Paint _paint; //画笔对象
+  Paint _paint =  Paint(); //画笔对象
   Path _path = Path(); //路径对象
   Size _size;//网格区域
 

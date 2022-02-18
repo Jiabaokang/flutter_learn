@@ -1,8 +1,8 @@
 
 import 'package:flutter/material.dart';
-import 'package:flutter_getx_learn/flutter_travel/day03/draws/grid_page.dart';
 import 'package:flutter_getx_learn/flutter_travel/day03/draws/start_page.dart';
-import 'package:flutter_getx_learn/utils/status_bar_utils.dart';
+import '../../../utils/status_bar_utils.dart';
+import 'grid_page.dart';
 
 void main(){
   StatusBarUtils.setStatusBarLight();

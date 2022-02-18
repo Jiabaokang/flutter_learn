@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_getx_learn/get_x/controller/count_controller.dart';
-import 'package:flutter_getx_learn/get_x/pages/getx_dependency_page.dart';
-import 'package:flutter_getx_learn/get_x/pages/getx_route.dart';
 import 'package:get/get.dart';
-
+import 'get_x/controller/count_controller.dart';
 import 'get_x/controller/dependency_controller.dart';
+import 'get_x/pages/getx_route.dart';
+import 'pamphlet_learn/p01/s01_pure/paper.dart';
 import 'utils/status_bar_utils.dart';
 
 void main() {
@@ -27,59 +26,73 @@ class HomePage extends StatelessWidget {
         centerTitle: true,
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ElevatedButton(
-                onPressed: () => Get.to(OtherPage(),
-                    transition: Transition.cupertino,
-                    curve: Curves.easeIn,duration: Duration(milliseconds: 800),
-                    arguments: {"keyName":"JIABAOKANG","keyAge":"18"}
+        child: Container(
+          height: Get.height,
+          child: SingleChildScrollView(
+            padding: EdgeInsets.symmetric(horizontal: 10),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton(
+                    onPressed: () => Get.to(OtherPage(),
+                        transition: Transition.cupertino,
+                        curve: Curves.easeIn,
+                        duration: Duration(milliseconds: 800),
+                        arguments: {"keyName": "JIABAOKANG", "keyAge": "18"}),
+                    child: const Text('GetX中 Router的使用')),
+
+                ElevatedButton(
+                    onPressed: () => testGetXBottomSheet(controller),
+                    child: Text('GetX中 内置BottomSheet使用')),
+
+                OutlinedButton(
+                    onPressed: () => buildDefaultDialog(controller),
+                    child: Text('GetX中 内置Dialog使用')),
+
+                ElevatedButton(
+                    onPressed: () => testGetXSnackBar(controller),
+                    child: Text('GetX中 内置SnackBar使用')),
+
+                OutlinedButton(
+                    onPressed: () => {Get.to(Paper())},
+                    child: Text("小册-绘制指南-妙笔生花")),
+
+                OutlinedButton(
+                    onPressed: () => {}, child: Text("小册-手势探索-执掌天下")),
+                OutlinedButton(
+                    onPressed: () => {}, child: Text("小册-动画探索-流光幻影")),
+                OutlinedButton(
+                    onPressed: () => {}, child: Text("小册-滑动探索-珠联璧合")),
+
+                Divider(
+                  height: 30,
                 ),
-                child: Text('GetX中 Router的使用')
-            ),
-
-            ElevatedButton(
-                onPressed: () => testGetXBottomSheet(controller),
-                child: Text('GetX中 内置BottomSheet使用')
-            ),
-
-            OutlinedButton(
-                onPressed: () => buildDefaultDialog(controller),
-                child: Text('GetX中 内置Dialog使用')
-            ),
-
-            ElevatedButton(
-                onPressed: () => testGetXSnackBar(controller),
-                child: Text('GetX中 内置SnackBar使用')
-            ),
-            Divider(
-              height: 30,
-            ),
-            //GetX更新状态可以根据刷新的范围具体调整（颗粒度的问题）
-            Obx(() => Container(
-                  color: Colors.amberAccent,
-                  height: 150,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text('点击"+"数字累加+1',
-                          style:
-                              TextStyle(fontSize: 22.0, color: Colors.green)),
-                      Obx(() => Text(
-                            "小范围更新：${controller.count}",
+                //GetX更新状态可以根据刷新的范围具体调整（颗粒度的问题）
+                Obx(() => Container(
+                      color: Colors.amberAccent,
+                      height: 150,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text('点击"+"数字累加+1',
+                              style: TextStyle(
+                                  fontSize: 22.0, color: Colors.green)),
+                          Obx(() => Text(
+                                "小范围更新：${controller.count}",
+                                style: TextStyle(
+                                    fontSize: 26.0, color: Colors.redAccent),
+                              )),
+                          Text(
+                            "大范围更新：${controller.count}",
                             style: TextStyle(
-                                fontSize: 26.0, color: Colors.redAccent),
-                          )),
-                      Text(
-                        "大范围更新：${controller.count}",
-                        style:
-                            TextStyle(fontSize: 36.0, color: Colors.redAccent),
-                      )
-                    ],
-                  ),
-                ))
-          ],
+                                fontSize: 36.0, color: Colors.redAccent),
+                          )
+                        ],
+                      ),
+                    ))
+              ],
+            ),
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
@@ -192,7 +205,7 @@ class HomePage extends StatelessWidget {
   }
 
   /// 测试getX中的snackBar
-  void testGetXSnackBar(CountController controller) {
+  SnackbarController testGetXSnackBar(CountController controller) {
     return Get.snackbar(
       '这是标题',
       '这是内容',

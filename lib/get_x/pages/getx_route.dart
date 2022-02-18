@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_getx_learn/get_x/pages/html_demo_page.dart';
-import 'package:flutter_getx_learn/get_x/controller/sum_controller.dart';
-import 'package:flutter_getx_learn/get_x/controller/update_controller.dart';
-import 'package:flutter_getx_learn/get_x/model/user_data.dart';
-import 'package:flutter_getx_learn/utils/color_utils.dart';
-import 'package:flutter_getx_learn/utils/status_bar_utils.dart';
+
 import 'package:get/get.dart';
 
+import '../../utils/color_utils.dart';
+import '../controller/sum_controller.dart';
+import '../controller/update_controller.dart';
+import '../model/user_data.dart';
 import 'getx_dependency_page.dart';
+import 'html_demo_page.dart';
 
 class OtherPage extends StatelessWidget {
   // final CountController _controller;
@@ -40,8 +40,8 @@ class OtherPage extends StatelessWidget {
             ElevatedButton(
                 onPressed: () {
                   user1.update((user) {
-                    user.name = "SY";
-                    user.age = 23;
+                    user?.name = "SY";
+                    user?.age = 23;
                   });
                 },
                 child: Text("更新User对象后,Text会显示结果")),
@@ -90,7 +90,7 @@ class OtherPage extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(15)),
                   gradient: RadialGradient(
-                    center: Alignment.lerp(Alignment.bottomLeft, Alignment.topLeft, 0.5),
+                    center: Alignment.centerLeft,
                     radius: 2,
                     colors: <Color>[
                       ColorsUtils.randomColor(limitG: 0),
@@ -136,10 +136,10 @@ class OtherPage extends StatelessWidget {
                 child: Text('GetX中 依赖注入的使用')
             ),
 
-            ElevatedButton(
-                onPressed: () => Get.to(HtmlPage()),
-                child: Text('测试Flutter html')
-            ),
+            // ElevatedButton(
+            //     onPressed: () => Get.to(HtmlPage()),
+            //     child: Text('测试Flutter html')
+            // ),
           ],
         ),
       ),

@@ -15,16 +15,16 @@ abstract class Operable {
 ///实现接口定义的行为方法
 class Vector2 extends Operable {
   //成员变量
-  num x;
-  num y;
+  num x = 0;
+  num y = 0;
 
   //构造方法
   Vector2(this.x, this.y);
 
   //映射对象
   Vector2.formMap(Map<String, num> point) {
-    this.x = point['x'];
-    this.y = point['y'];
+      x = point['x']??0;
+      y = point['y']??0;
   }
 
 

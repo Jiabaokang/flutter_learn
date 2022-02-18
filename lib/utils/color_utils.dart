@@ -1,5 +1,4 @@
 import 'dart:math';
-import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_getx_learn/utils/random_provider.dart';
@@ -28,7 +27,7 @@ class ColorsUtils {
       try {
         value = int.parse(colorCode.substring(1), radix: 16);
       } catch (e) {
-        print(e);
+        return result;
       }
       switch (colorCode.length) {
         case 1 + 6: //6位字符串color值
@@ -40,8 +39,8 @@ class ColorsUtils {
         default:
           result = Colors.red;
       }
-      return result;
     }
+    return result;
   }
 
 

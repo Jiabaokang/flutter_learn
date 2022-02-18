@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_getx_learn/flutter_travel/day03/app/cons.dart';
-import 'package:flutter_getx_learn/flutter_travel/day03/draws/grid_page.dart';
-import 'package:flutter_getx_learn/flutter_travel/day03/views/home/home_left_drawer.dart';
-import 'package:flutter_getx_learn/flutter_travel/day03/views/home/home_menu.dart';
+import '../../app/cons.dart';
+import '../../draws/grid_page.dart';
+import '../home/home_left_drawer.dart';
+import '../home/home_menu.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -12,7 +12,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin{
 
 
-  TabController mController ;
+  late TabController mController ;
 
   @override
   void initState() {
@@ -104,6 +104,8 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
       case 2:
         return GridPage();
       case 4:
+        return GridPage();
+      default :
         return GridPage();
     }
   }

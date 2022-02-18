@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatefulWidget {
 
-  MyHomePage({ Key key,this.title}):super(key: key);
+  MyHomePage({ Key? key,required this.title}):super(key: key);
   final String title;
 
 
@@ -66,8 +66,8 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  num str2Num(String str){//捕捉全部异常
-    var result= 0;
+  num? str2Num(String str){//捕捉全部异常
+    num result= 0;
     try {
       result= num.parse(str);
     } catch (e) {
@@ -94,10 +94,10 @@ void testDart(){
   print("类似三元运算符 ?? 返回值==>>$e=$e,g=$g"); //返回null；
 
   //对象为null
-  String str;
+  String? str = null;
   //print(str.isEmpty);这个会奔溃的
 
-  var str2 = "555";
+  String? str2 = "555";
   str2 = str;
   print("对象使用?.语法返回值==>>${str2?.length}"); //返回null；
 

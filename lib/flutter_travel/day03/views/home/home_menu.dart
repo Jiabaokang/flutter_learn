@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_getx_learn/flutter_travel/day03/app/cons.dart';
-import 'package:flutter_getx_learn/flutter_travel/day03/views/dialogs/dialog_about.dart';
+
+import '../../app/cons.dart';
+import '../dialogs/dialog_about.dart';
+
 
 class HomeMenu extends StatelessWidget {
   @override
